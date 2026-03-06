@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToolsHub - Premium Utilities</title>
+    <link rel="icon" href="images/logo.png">
+    <!-- Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="blob-bg"></div>
+    <div class="blob-bg blob-bg-2"></div>
+
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <span class="logo-icon">🪛</span>
+                <span class="logo-text">ToolsHub</span>
+            </div>
+
+            <div class="lang-switch">
+                <button id="lang-en" class="lang-btn active">EN</button>
+                <button id="lang-tr" class="lang-btn">TR</button>
+            </div>
+        </header>
+
+        <nav class="tool-nav">
+            <button class="nav-btn active" data-target="password-tool" data-i18n="nav_password">Password Gen</button>
+            <button class="nav-btn" data-target="username-tool" data-i18n="nav_username">Username Gen</button>
+            <button class="nav-btn" data-target="color-tool" data-i18n="nav_color">Color Picker</button>
+        </nav>
+
+        <main class="tool-content">
+            <!-- Password Generator -->
+            <section id="password-tool" class="tool-section active">
+                <h1 data-i18n="pass_title">Secure Password Generator</h1>
+                <p class="subtitle" data-i18n="pass_subtitle">Generate strong, unpredictable passwords instantly.</p>
+
+                <div class="output-container">
+                    <input type="text" id="pass-output" readonly placeholder="Password...">
+                    <button class="copy-btn" id="pass-copy" title="Copy"><svg width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8 5H6C4.89543 5 4 5.89543 4 7V19C4 20.1046 4.89543 21 6 21H16C17.1046 21 18 20.1046 18 19V17M8 5C8 6.10457 8.89543 7 10 7H12C13.1046 7 14 6.10457 14 5M8 5C8 3.89543 8.89543 3 10 3H12C13.1046 3 14 3.89543 14 5M14 5H16C17.1046 5 18 5.89543 18 7V10"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <path d="M16 13L20 13M20 13L18 11M20 13L18 15" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg></button>
+                </div>
+
+                <div class="controls-panel">
+                    <div class="control-group">
+                        <label for="pass-length"><span data-i18n="pass_length">Length</span>: <span
+                                id="pass-length-val">16</span></label>
+                        <input type="range" id="pass-length" min="4" max="32" value="16">
+                    </div>
+
+                    <div class="checkbox-grid">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" id="pass-upper" checked>
+                            <span class="checkmark"></span>
+                            <span data-i18n="pass_upper">Uppercase (A-Z)</span>
+                        </label>
+                        <label class="custom-checkbox">
+                            <input type="checkbox" id="pass-lower" checked>
+                            <span class="checkmark"></span>
+                            <span data-i18n="pass_lower">Lowercase (a-z)</span>
+                        </label>
+                        <label class="custom-checkbox">
+                            <input type="checkbox" id="pass-numbers" checked>
+                            <span class="checkmark"></span>
+                            <span data-i18n="pass_numbers">Numbers (0-9)</span>
+                        </label>
+                        <label class="custom-checkbox">
+                            <input type="checkbox" id="pass-symbols" checked>
+                            <span class="checkmark"></span>
+                            <span data-i18n="pass_symbols">Symbols (!@#$)</span>
+                        </label>
+                    </div>
+
+                    <button id="pass-generate-btn" class="primary-btn glow-effect" data-i18n="pass_generate">Generate
+                        Password</button>
+                </div>
+            </section>
+
+            <!-- Username Generator -->
+            <section id="username-tool" class="tool-section">
+                <h1 data-i18n="user_title">Username Generator</h1>
+                <p class="subtitle" data-i18n="user_subtitle">Find the perfect unique name for your profiles.</p>
+
+                <div class="output-container">
+                    <input type="text" id="user-output" readonly placeholder="Username...">
+                    <button class="copy-btn" id="user-copy" title="Copy"><svg width="24" height="24" viewBox="0 0 24 24"
+                            fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8 5H6C4.89543 5 4 5.89543 4 7V19C4 20.1046 4.89543 21 6 21H16C17.1046 21 18 20.1046 18 19V17M8 5C8 6.10457 8.89543 7 10 7H12C13.1046 7 14 6.10457 14 5M8 5C8 3.89543 8.89543 3 10 3H12C13.1046 3 14 3.89543 14 5M14 5H16C17.1046 5 18 5.89543 18 7V10"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <path d="M16 13L20 13M20 13L18 11M20 13L18 15" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg></button>
+                </div>
+
+                <div class="controls-panel">
+                    <div class="control-group">
+                        <label for="user-keyword" data-i18n="user_keyword">Include Keyword (Optional)</label>
+                        <input type="text" id="user-keyword" class="text-input" placeholder="e.g. 'ninja', 'star'">
+                    </div>
+
+                    <div class="checkbox-grid single-col">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" id="user-numbers" checked>
+                            <span class="checkmark"></span>
+                            <span data-i18n="user_numbers">Add numbers at the end</span>
+                        </label>
+                    </div>
+
+                    <button id="user-generate-btn" class="primary-btn glow-effect" data-i18n="user_generate">Generate
+                        Username</button>
+                </div>
+            </section>
+
+            <!-- Color Picker -->
+            <section id="color-tool" class="tool-section">
+                <h1 data-i18n="col_title">Color Picker & Converter</h1>
+                <p class="subtitle" data-i18n="col_subtitle">Select, extract, and convert colors perfectly.</p>
+
+                <div class="color-display-area">
+                    <div id="color-preview" class="color-preview"></div>
+                    <input type="color" id="native-color-input" value="#8b5cf6">
+                </div>
+
+                <div class="color-outputs">
+                    <div class="color-box">
+                        <span class="color-label">HEX</span>
+                        <div class="output-container inline">
+                            <input type="text" id="col-hex-output" readonly value="#8b5cf6">
+                            <button class="copy-btn" id="col-hex-copy" title="Copy"><svg width="20" height="20"
+                                    viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M8 5H6C4.89543 5 4 5.89543 4 7V19C4 20.1046 4.89543 21 6 21H16C17.1046 21 18 20.1046 18 19V17M8 5C8 6.10457 8.89543 7 10 7H12C13.1046 7 14 6.10457 14 5M8 5C8 3.89543 8.89543 3 10 3H12C13.1046 3 14 3.89543 14 5M14 5H16C17.1046 5 18 5.89543 18 7V10"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                </svg></button>
+                        </div>
+                    </div>
+
+                    <div class="color-box">
+                        <span class="color-label">RGB</span>
+                        <div class="output-container inline">
+                            <input type="text" id="col-rgb-output" readonly value="rgb(139, 92, 246)">
+                            <button class="copy-btn" id="col-rgb-copy" title="Copy"><svg width="20" height="20"
+                                    viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M8 5H6C4.89543 5 4 5.89543 4 7V19C4 20.1046 4.89543 21 6 21H16C17.1046 21 18 20.1046 18 19V17M8 5C8 6.10457 8.89543 7 10 7H12C13.1046 7 14 6.10457 14 5M8 5C8 3.89543 8.89543 3 10 3H12C13.1046 3 14 3.89543 14 5M14 5H16C17.1046 5 18 5.89543 18 7V10"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                </svg></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="controls-panel">
+                    <button id="col-random-btn" class="primary-btn glow-effect" data-i18n="col_generate">Generate Random
+                        Color</button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div id="toast-message" class="toast">Copied to clipboard!</div>
+        </footer>
+    </div>
+
+    <script src="translations.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
