@@ -4,16 +4,17 @@
     --border-color: rgba(255, 255, 255, 0.1);
     --text-primary: #ffffff;
     --text-secondary: #94a3b8;
-    
-    --primary-color: #8b5cf6; /* Vibrant purple */
+
+    --primary-color: #8b5cf6;
+    /* Vibrant purple */
     --primary-hover: #7c3aed;
     --gradient-1: linear-gradient(135deg, #8b5cf6 0%, #d946ef 100%);
-    
+
     --success-color: #10b981;
     --radius-lg: 24px;
     --radius-md: 16px;
     --radius-sm: 8px;
-    
+
     --font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
 }
 
@@ -59,13 +60,23 @@ body {
 }
 
 @keyframes blobAnim {
-    0% { transform: translate(0, 0) scale(1); }
-    100% { transform: translate(100px, 50px) scale(1.1); }
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(100px, 50px) scale(1.1);
+    }
 }
 
 @keyframes blobAnim2 {
-    0% { transform: translate(0, 0) scale(1); }
-    100% { transform: translate(-50px, -100px) scale(1.2); }
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(-50px, -100px) scale(1.2);
+    }
 }
 
 /* App Container */
@@ -91,6 +102,7 @@ header {
     font-size: 1.5rem;
     font-weight: 700;
     background: var(--gradient-1);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -122,7 +134,7 @@ header {
 .lang-btn.active {
     background: var(--card-bg);
     color: var(--text-primary);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Tool Navigation */
@@ -130,7 +142,7 @@ header {
     display: flex;
     gap: 0.5rem;
     margin-bottom: 2rem;
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
     padding: 6px;
     border-radius: var(--radius-md);
     backdrop-filter: blur(10px);
@@ -152,14 +164,109 @@ header {
 
 .nav-btn:hover {
     color: var(--text-primary);
-    background: rgba(255,255,255,0.03);
+    background: rgba(255, 255, 255, 0.03);
 }
 
 .nav-btn.active {
     background: var(--card-bg);
     color: var(--text-primary);
     border: 1px solid var(--border-color);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Main Footer Styling */
+.main-footer {
+    margin-top: 6rem;
+    padding: 3rem 2rem 1.5rem;
+    border-top: 1px solid var(--border-color);
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    text-align: left;
+    margin-bottom: 3rem;
+}
+
+.footer-brand .logo {
+    margin-bottom: 1rem;
+}
+
+.footer-tagline {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    max-width: 250px;
+}
+
+.footer-links h3,
+.footer-social h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* App Container adjustment for full width footer */
+.app-container {
+    width: 100%;
+    max-width: 800px;
+    padding: 2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Main Content Area */
@@ -170,7 +277,7 @@ header {
     border-radius: var(--radius-lg);
     padding: 2.5rem;
     backdrop-filter: blur(16px);
-    box-shadow: 0 24px 48px rgba(0,0,0,0.3);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.3);
     animation: fadeIn 0.4s ease-out forwards;
 }
 
@@ -179,8 +286,15 @@ header {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 h1 {
@@ -208,7 +322,7 @@ h1 {
 
 input[type="text"] {
     width: 100%;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0, 0, 0, 0.3);
     border: 1px solid var(--border-color);
     padding: 1rem 3.5rem 1rem 1.5rem;
     border-radius: var(--radius-md);
@@ -218,6 +332,7 @@ input[type="text"] {
     font-family: 'Courier New', Courier, monospace;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
+
 input[type="text"]:focus {
     outline: none;
     border-color: var(--primary-color);
@@ -263,7 +378,7 @@ input[type="text"]:focus {
 
 /* Controls */
 .controls-panel {
-    background: rgba(255,255,255,0.02);
+    background: rgba(255, 255, 255, 0.02);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
     padding: 1.5rem;
@@ -286,12 +401,14 @@ input[type="range"] {
     -webkit-appearance: none;
     width: 100%;
     height: 6px;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 3px;
     outline: none;
 }
+
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
+    appearance: none;
     appearance: none;
     width: 20px;
     height: 20px;
@@ -301,6 +418,7 @@ input[type="range"]::-webkit-slider-thumb {
     box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
     transition: transform 0.1s ease;
 }
+
 input[type="range"]::-webkit-slider-thumb:hover {
     transform: scale(1.2);
 }
@@ -348,13 +466,13 @@ input[type="range"]::-webkit-slider-thumb:hover {
     transform: translateY(-50%);
     height: 20px;
     width: 20px;
-    background-color: rgba(255,255,255,0.05);
+    background-color: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--border-color);
     border-radius: 4px;
     transition: all 0.2s ease;
 }
 
-.custom-checkbox input:checked ~ .checkmark {
+.custom-checkbox input:checked~.checkmark {
     background-color: var(--primary-color);
     border-color: var(--primary-color);
 }
@@ -372,7 +490,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
     transform: rotate(45deg);
 }
 
-.custom-checkbox input:checked ~ .checkmark:after {
+.custom-checkbox input:checked~.checkmark:after {
     display: block;
 }
 
@@ -396,18 +514,22 @@ input[type="range"]::-webkit-slider-thumb:hover {
 .glow-effect::before {
     content: '';
     position: absolute;
-    top: 0; left: -100%;
-    width: 100%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: left 0.5s ease;
 }
 
 .primary-btn:hover {
     transform: translateY(-2px);
 }
+
 .primary-btn:hover::before {
     left: 100%;
 }
+
 .primary-btn:active {
     transform: translateY(1px);
 }
@@ -476,7 +598,7 @@ input[type="color"] {
     opacity: 0;
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     z-index: 1000;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .toast.show {
@@ -486,8 +608,20 @@ input[type="color"] {
 
 /* Responsive */
 @media (max-width: 480px) {
-    .app-container { padding: 1rem; }
-    .tool-section { padding: 1.5rem; }
-    .checkbox-grid { grid-template-columns: 1fr; }
-    .nav-btn { font-size: 0.8rem; padding: 10px 4px; }
+    .app-container {
+        padding: 1rem;
+    }
+
+    .tool-section {
+        padding: 1.5rem;
+    }
+
+    .checkbox-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-btn {
+        font-size: 0.8rem;
+        padding: 10px 4px;
+    }
 }
