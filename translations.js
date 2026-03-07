@@ -3,7 +3,7 @@ const translations = {
         nav_password: "Password Gen",
         nav_username: "Username Gen",
         nav_color: "Color Picker",
-        
+
         pass_title: "Secure Password Generator",
         pass_subtitle: "Generate strong, unpredictable passwords instantly.",
         pass_length: "Length",
@@ -12,24 +12,29 @@ const translations = {
         pass_numbers: "Numbers (0-9)",
         pass_symbols: "Symbols (!@#$)",
         pass_generate: "Generate Password",
-        
+
         user_title: "Username Generator",
         user_subtitle: "Find the perfect unique name for your profiles.",
         user_keyword: "Include Keyword (Optional)",
         user_numbers: "Add numbers at the end",
         user_generate: "Generate Username",
-        
+
         col_title: "Color Picker & Converter",
         col_subtitle: "Select, extract, and convert colors perfectly.",
         col_generate: "Generate Random Color",
-        
+
+        footer_tagline: "Premium tools for your daily digital needs.",
+        footer_tools_title: "Quick Tools",
+        footer_social_title: "Connect",
+        footer_copyright: "© 2026 Yiğit Alp | All rights reserved.",
+
         copied_toast: "Copied to clipboard!"
     },
     tr: {
         nav_password: "Şifre Üretici",
         nav_username: "Kullanıcı Adı Üretici",
         nav_color: "Renk Seçici",
-        
+
         pass_title: "Güvenli Şifre Üretici",
         pass_subtitle: "Anında güçlü ve tahmin edilemez şifreler oluşturun.",
         pass_length: "Uzunluk",
@@ -38,17 +43,22 @@ const translations = {
         pass_numbers: "Rakamlar (0-9)",
         pass_symbols: "Semboller (!@#$)",
         pass_generate: "Şifre Üret",
-        
+
         user_title: "Kullanıcı Adı Üretici",
         user_subtitle: "Profilleriniz için mükemmel benzersiz ismi bulun.",
         user_keyword: "Kelime Ekle (Opsiyonel)",
         user_numbers: "Sona rakam ekle",
         user_generate: "Kullanıcı Adı Oluştur",
-        
+
         col_title: "Renk Seçici ve Dönüştürücü",
         col_subtitle: "Renkleri mükemmel bir şekilde seçin ve dönüştürün.",
         col_generate: "Rastgele Renk Üret",
-        
+
+        footer_tagline: "Günlük dijital ihtiyaçlarınız için premium araçlar.",
+        footer_tools_title: "Hızlı Araçlar",
+        footer_social_title: "Bağlan",
+        footer_copyright: "© 2026 Yiğit Alp | Tüm hakları saklıdır.",
+
         copied_toast: "Panoya kopyalandı!"
     }
 };
