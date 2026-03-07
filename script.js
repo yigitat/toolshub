@@ -40,17 +40,41 @@ document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     const navBtns = document.querySelectorAll('.nav-btn');
     const sections = document.querySelectorAll('.tool-section');
+    const footerNavLinks = document.querySelectorAll('.footer-nav-link');
+
+    function switchTool(targetId) {
+        // Remove active from all
+        navBtns.forEach(b => b.classList.remove('active'));
+        sections.forEach(s => s.classList.remove('active'));
+
+        // Add active to the correct nav button
+        navBtns.forEach(btn => {
+            if (btn.getAttribute('data-target') === targetId) {
+                btn.classList.add('active');
+            }
+        });
+
+        // Add active to the section
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+            targetSection.classList.add('active');
+            // Smooth scroll to top of section
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
 
     navBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Remove active from all
-            navBtns.forEach(b => b.classList.remove('active'));
-            sections.forEach(s => s.classList.remove('active'));
-
-            // Add active to clicked
-            btn.classList.add('active');
             const targetId = btn.getAttribute('data-target');
-            document.getElementById(targetId).classList.add('active');
+            switchTool(targetId);
+        });
+    });
+
+    footerNavLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('data-target');
+            switchTool(targetId);
         });
     });
 
